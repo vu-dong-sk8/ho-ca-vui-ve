@@ -1,95 +1,18 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trang Hồ Cá</title>
-  
-  <style>
-
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    /* Khung chứa hồ cá */
-    .aquarium {
-      width: 100vw;
-      height: 100vh;
-      background-image: url('daiduong.jpg');
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* Định dạng các con cá */
-    .fish, .fish2, .fish3, .fish4, .fish5, .fish6 {
-      width:220px;
-      height: 200px;
-      background-size: cover;
-      position: absolute;
-      transition: transform 2s linear;
-    }
-    .fish { background-image: url('concaxanh.jpg'); }
-    .fish2 { background-image: url('concaxanh.jpg'); }
-    .fish3 { background-image: url('concamap.png'); }
-    .fish4 { background-image: url('concamap.png'); }
-    .fish5 { background-image: url('gautruc.png'); }
-    .fish6 { background-image: url('gautruc.png'); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-
-  <div class="aquarium">
-    <div class="fish" id="fish"></div>
-    <div class="fish2" id="fish2"></div>
-    <div class="fish3" id="fish3"></div>
-    <div class="fish4" id="fish4"></div>
-    <div class="fish5" id="fish5"></div>
-    <div class="fish6" id="fish6"></div>
-  </div>
-
-  <script>
-    const aquarium = document.querySelector('.aquarium');
-    const fishArray = [
-      document.getElementById('fish'),
-      document.getElementById('fish2'),
-      document.getElementById('fish3'),
-      document.getElementById('fish4'),
-      document.getElementById('fish5'),
-      document.getElementById('fish6')
-    ];
-
-    function getRandomPosition(element) {
-      // Tính toán vị trí ngẫu nhiên trong phạm vi cho phép
-      const maxX = aquarium.clientWidth - element.clientWidth-element.clientWidth- element.clientWidth-element.clientWidth; // Giới hạn theo chiều ngang
-      const maxY = aquarium.clientHeight - element.clientHeight-element.clientHeight- element.clientHeight; // Giới hạn theo chiều dọc
-      const x = Math.floor(Math.random() * maxX); // Vị trí x ngẫu nhiên
-      const y = Math.floor(Math.random() * maxY); // Vị trí y ngẫu nhiên
-      return { x, y };
-    }
-
-    function moveFish(element) {
-      const { x, y } = getRandomPosition(element); // Lấy vị trí ngẫu nhiên
-      element.style.transform = `translate(${x}px, ${y}px)`; // Di chuyển cá
-    }
-
-    function animateFish(element) {
-      moveFish(element);
-      const randomInterval = Math.floor(Math.random() * 1000) + 200;
-      setTimeout(() => animateFish(element), randomInterval);
-    }
-
-    // Khởi động di chuyển các con cá với vị trí ngẫu nhiên
-    fishArray.forEach(fish => {
-      const { x, y } = getRandomPosition(fish);
-      fish.style.left = `${x}px`;
-      fish.style.top = `${y}px`;
-      animateFish(fish);
-    });
-  </script>
+    <header>
+        <h1>NỘP BÀI GIỮA KỲ</h1>
+        <nav>
+            <a href="hoca.html">Hồ cá</a>
+            <a href="CV.html">CV</a>
+            
+        </nav>
+    </header>
 </body>
 </html>
